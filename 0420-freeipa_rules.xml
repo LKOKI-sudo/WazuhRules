@@ -28,7 +28,7 @@
     <!--
     [Tue Aug 09 18:26:22 2016] [error] ipa: INFO: 401 Unauthorized: kinit: Password incorrect while getting initial credentials
     -->
-    <rule id="82203" level="4">
+    <rule id="82203" level="10">
         <if_sid>82202</if_sid>
         <match>Password incorrect</match>
         <description>FreeIPA: Authentication fail</description>
