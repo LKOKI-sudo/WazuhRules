@@ -14,7 +14,7 @@
         <description>Imperva messages grouped.</description>
     </rule>
 
-    <rule id="82001" level="4">
+    <rule id="82001" level="7">
         <if_sid>82000</if_sid>
         <status>High</status>
         <description>Imperva: Event with high severity</description>

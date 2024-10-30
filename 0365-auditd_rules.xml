@@ -210,7 +210,7 @@
     <!--
     type=ANOM_LOGIN_ACCT msg=audit(1450770603.209:3300446): Text
     -->
-    <rule id="80722" level="5">
+    <rule id="80722" level="7">
         <if_sid>80700</if_sid>
         <field name="audit.type">ANOM_LOGIN_ACCT</field>
         <description>Auditd: account login attempt ended abnormally.</description>
@@ -220,7 +220,7 @@
     <!--
     type=ANOM_LOGIN_FAILURES msg=audit(1450770603.209:3300446): Text
     -->
-    <rule id="80723" level="5">
+    <rule id="80723" level="7">
         <if_sid>80700</if_sid>
         <field name="audit.type">ANOM_LOGIN_FAILURES</field>
         <description>Auditd: limit of failed login attempts reached.</description>
@@ -233,7 +233,7 @@
     <!--
     type=ANOM_LOGIN_LOCATION msg=audit(1450770603.209:3300446): Text
     -->
-    <rule id="80724" level="5">
+    <rule id="80724" level="10">
         <if_sid>80700</if_sid>
         <field name="audit.type">ANOM_LOGIN_LOCATION</field>
         <description>Auditd: login attempt from a forbidden location.</description>
@@ -243,7 +243,7 @@
     <!--
     type=ANOM_LOGIN_SESSIONS msg=audit(1450770603.209:3300446): Text
     -->
-    <rule id="80725" level="4">
+    <rule id="80725" level="5">
         <if_sid>80700</if_sid>
         <field name="audit.type">ANOM_LOGIN_SESSIONS</field>
         <description>Auditd: login attempt reached the maximum amount of concurrent sessions.</description>
@@ -298,7 +298,7 @@
     <!--
     type=CRYPTO_REPLAY_USER msg=audit(1234567890.123:1234): Text
     -->
-    <rule id="80740" level="12">
+    <rule id="80740" level="15">
         <if_sid>80700</if_sid>
         <field name="audit.type">CRYPTO_REPLAY_USER</field>
         <description>Auditd: replay attack detected</description>

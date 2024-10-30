@@ -52,7 +52,7 @@ ID: 81600 - 80799
     <!--
     date=2016-06-17 time=02:37:41 devname=Mobipay_Firewall devid=FGTXXXX9999999999 logid=0100032002 type=event subtype=system level=alert vd="root" logdesc="Admin login failed" sn=0 user="root" ui=ssh(222.186.130.227) action=login status=failed reason="name_invalid" msg="Administrator root login failed from ssh(222.186.130.227) because of invalid user name"
     -->
-    <rule id="81606" level="4">
+    <rule id="81606" level="7">
         <if_sid>81603</if_sid>
         <action>login</action>
         <status>failed</status>
@@ -60,7 +60,7 @@ ID: 81600 - 80799
         <group>authentication_failed,invalid_login,pci_dss_10.2.4,pci_dss_10.2.5,gpg13_7.1,gdpr_IV_35.7.d,gdpr_IV_32.2,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AC.7,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
     </rule>
 
-    <rule id="81607" level="7" frequency="18" timeframe="45" ignore="240">
+    <rule id="81607" level="10" frequency="18" timeframe="45" ignore="240">
         <if_matched_sid>81606</if_matched_sid>
         <same_source_ip />
         <description>Fortigate: Multiple failed login events from same source.</description>
@@ -114,14 +114,14 @@ ID: 81600 - 80799
     <!--
     date=2016-06-16 time=09:03:03 devname=Device_Name devid=FGTXXXX9999999999 logid=9999999999 type=event subtype=system level=information vd="root" logdesc="Object attribute configured" user="admin" ui="GUI(4.3.5.8)" action=Edit cfgtid=2162752 cfgpath="firewall.service.custom" cfgobj="Custom-TCP_10443" cfgattr="tcp-portrange[->10443]udp-portrange[->]sctp-portrange[->]" msg="Edit firewall.service.custom Custom-TCP_10443"
     -->
-    <rule id="81612" level="3">
+    <rule id="81612" level="5">
         <if_sid>81603</if_sid>
         <action>Edit</action>
         <description>Fortigate: Firewall configuration changes</description>
         <group>pci_dss_10.6.1,gpg13_4.13,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AU.6,tsc_CC7.2,tsc_CC7.3,</group>
     </rule>
 
-    <rule id="81613" level="4" frequency="18" timeframe="45" ignore="240">
+    <rule id="81613" level="5" frequency="18" timeframe="45" ignore="240">
         <if_matched_sid>81612</if_matched_sid>
         <same_source_ip />
         <description>Fortigate: Multiple Firewall edit events from same source.</description>
@@ -132,7 +132,7 @@ ID: 81600 - 80799
     <!--
     date=2016-06-15 time=21:35:09 devname=Device_Name devid=FGTXXXX9999999999 logid=0101039426 type=event subtype=vpn level=alert vd="root" logdesc="SSL VPN login fail" action="ssl-login-fail" tunneltype="ssl-web" tunnelid=0 remip=2.4.6.8 tunnelip=(null) user="my_user_name" group="N/A" dst_host="N/A" reason="sslvpn_login_unknown_user" msg="SSL user failed to logged in"
     -->
-    <rule id="81614" level="4">
+    <rule id="81614" level="7">
         <if_sid>81603</if_sid>
         <match>ssl-login-fail</match>
         <description>Fortigate: SSL VPN User failed login attempt</description>
@@ -189,7 +189,7 @@ ID: 81600 - 80799
     <!--
     date=2016-06-15 time=11:44:46 devname=Device_Name devid=FGTXXXX9999999999 logid=9999999999 type=utm subtype=webfilter eventtype=urlfilter level=warning vd="root" urlfilteridx=3 urlfilterlist="default" policyid=2 sessionid=1563645 user="" srcip=1.2.3.11 srcport=52414 srcintf="internal2" dstip=1.5.5.92 dstport=443 dstintf="wan2" proto=6 service=HTTPS hostname="4-edge-chat.facebook.com" profile="default" action=blocked reqtype=referral url="/p?partition=-2&cb=lz1k&failure=5&sticky_token=274&sticky_pool=atn2c06_chat-proxy" sentbyte=932 rcvdbyte=0 direction=outgoing msg="URL was blocked because it is in the URL filter list" crscore=30 crlevel=high
     -->
-    <rule id="81620" level="0">
+    <rule id="81620" level="3">
         <if_sid>81603</if_sid>
         <status>warning</status>
         <action>blocked</action>
@@ -271,7 +271,7 @@ ID: 81600 - 80799
 
     Mar 22 19:21:00 10.10.10.10 date=2016-03-22 time=19:20:46 devname=Text devid=FGT3HD0000000000 logid=0000018000 type=anomaly subtype=anomaly level=alert vd="root" severity=critical srcip=10.10.10.61 dstip=10.10.10.84 srcintf="port2" sessionid=0 action=dropped proto=6 service=NONE count=9 attack="IP.Bad.Header" attackid=127 profile="N/A" ref="http://www.fortinet.com/ids/VID127" msg="anomaly: IP.Bad.Header, repeats 9 times" crscore=50 crlevel=critical
     -->
-    <rule id="81628" level="11">
+    <rule id="81628" level="15">
         <if_sid>81603</if_sid>
         <match>attack</match>
         <action>detected</action>
@@ -279,7 +279,7 @@ ID: 81600 - 80799
         <group>attack,gdpr_IV_35.7.d,</group>
     </rule>
 
-    <rule id="81629" level="3">
+    <rule id="81629" level="7">
         <if_sid>81603</if_sid>
         <match>attack</match>
         <action>dropped</action>
