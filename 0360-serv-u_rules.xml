@@ -91,7 +91,7 @@ TypeMessage:
     [02] Thu 26Nov15 17:55:14 - (000002) Invalid login credentials; user: "lin"; password: "**********"
     [02] Thu 26Nov15 17:55:14 - (000002) Password wrong too many times for user "lin" - disconnecting
     -->
-    <rule id="80505" level="5">
+    <rule id="80505" level="7">
         <if_sid>80500</if_sid>
         <action>02</action>
         <match>Invalid login credentials|Password wrong too many times</match>
@@ -137,7 +137,7 @@ TypeMessage:
     Connection
     [02] Thu 26Nov15 14:29:12 - (000004) Connected to 192.168.2.200 (local address 192.168.2.201, port 22)
     -->
-    <rule id="80509" level="3">
+    <rule id="80509" level="5">
         <if_sid>80500</if_sid>
         <action>02</action>
         <match>Connected to</match>
@@ -214,7 +214,7 @@ TypeMessage:
         <group>gdpr_II_5.1.f,</group>
     </rule>
 
-    <rule id="80516" level="3">
+    <rule id="80516" level="10">
         <if_sid>80500</if_sid>
         <action>15</action>
         <match>Directory deleted</match>
@@ -231,7 +231,7 @@ TypeMessage:
     Upload: .exe
     [11] Thu 26Nov15 17:55:14 - (587501) Received file "D:\MyFolder\virus.exe" successfully (217.35 KB/sec - 14,022 Bytes)
     -->
-    <rule id="80517" level="4">
+    <rule id="80517" level="5">
         <if_sid>80500</if_sid>
         <action>11</action>
         <match>Received file</match>
@@ -243,7 +243,7 @@ TypeMessage:
     User logged in FTP/FTPS
     [21] Thu 26Nov15 16:46:37 - (000016) 230 User logged in, proceed.
     -->
-    <rule id="80518" level="0">
+    <rule id="80518" level="5">
         <if_sid>80500</if_sid>
         <action>21</action>
         <match>230 User logged in, proceed</match>
@@ -258,7 +258,7 @@ TypeMessage:
     User logged in SFTP (SSH)
     [31] Thu 26Nov15 16:39:02 - (000007) SSH2_MSG_USERAUTH_SUCCESS: successful login
     -->
-    <rule id="80519" level="0">
+    <rule id="80519" level="5">
         <if_sid>80500</if_sid>
         <action>31</action>
         <match>SSH2_MSG_USERAUTH_SUCCESS</match>
@@ -288,7 +288,7 @@ TypeMessage:
     FTP anonymous
     [21] Thu 26Nov15 19:28:14 - (000010) 530 Sorry, no ANONYMOUS access allowed
     -->
-    <rule id="80521" level="2">
+    <rule id="80521" level="7">
         <if_sid>80500</if_sid>
         <action>21</action>
         <match>530 Sorry, no ANONYMOUS access allowed</match>

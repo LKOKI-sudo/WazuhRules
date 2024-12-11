@@ -94,7 +94,7 @@ Jun  8 11:54:52 HP-5500EI-HO %%10SHELL/4/LOGINAUTHFAIL(t): Trap 1.1.1.1.1.1.2550
     <!-- Warning events
     Jun  8 11:54:52 HP-5500EI-HO %%10WEB/4/WEBOPT_LOGIN_FAIL(l): dfddfd failed to log in from 10.10.10.27
      -->
-    <rule id="81709" level="4">
+    <rule id="81709" level="7">
         <if_sid>81705</if_sid>
         <match>failed to log in|failed to login|authentication failed|Authentication is failed</match>
         <description>HP 5500 EI - Warning event: Authentication failure</description>

@@ -14,7 +14,7 @@
         <description>Cisco eStreamer messages grouped.</description>
     </rule>
 
-	<rule id="82401" level="5">
+	<rule id="82401" level="10">
         <if_sid>82400</if_sid>
         <id>SERVER-MYSQL</id>
         <match>failed Oracle Mysql login attempt</match>
@@ -22,7 +22,7 @@
         <group>authentication_failed,pci_dss_10.2.4,pci_dss_10.2.5,gpg13_7.1,gdpr_IV_35.7.d,gdpr_IV_32.2,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AC.7,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
     </rule>
 
-	<rule id="82402" level="5">
+	<rule id="82402" level="15">
         <if_sid>82400</if_sid>
         <id>SERVER-MYSQL</id>
         <match>login attempt from unauthorized location</match>
@@ -30,7 +30,7 @@
         <group>authentication_failed,pci_dss_10.2.4,pci_dss_10.2.5,gpg13_7.1,gdpr_IV_35.7.d,gdpr_IV_32.2,hipaa_164.312.b,nist_800_53_AU.14,nist_800_53_AC.7,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
     </rule>
 
-	<rule id="82403" level="5">
+	<rule id="82403" level="15">
         <if_sid>82400</if_sid>
         <id>SERVER-MYSQL</id>
         <match>client authentication bypass attempt</match>
@@ -46,7 +46,7 @@
         <group>gdpr_IV_35.7.d,</group>
     </rule>
 
-	<rule id="82405" level="9">
+	<rule id="82405" level="13">
         <if_sid>82400</if_sid>
         <id>APP-DETECT</id>
         <match>DNS request for potential malware</match>
